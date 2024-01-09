@@ -32,3 +32,13 @@ class Number(DataType):
     def range(self, start, stop):
         self.conditions['range'] = lambda number: start <= number <= stop
         return self
+
+
+class ListData(DataType):
+    def required(self):
+        self.conditions['required'] = lambda list_of_data: type(list_of_data) == list
+        return self
+
+    def sizeof(self, size):
+        self.conditions['sizeof'] = lambda list_of_data: len(list_of_data) == size
+        return self
