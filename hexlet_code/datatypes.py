@@ -2,6 +2,10 @@ class DataType:
     def __init__(self):
         self.conditions = {}
 
+    '''
+    Check the specified string for compliance with each condition
+    by substituting a string as an argument into an anonymous function
+    '''
     def is_valid(self, string):
         return all(map(lambda check_function: check_function(string), self.conditions.values()))
 
@@ -26,7 +30,7 @@ class Number(DataType):
         return self
 
     def positive(self):
-        self.conditions['positive'] = lambda number: number > 0
+        self.conditions['positive'] = lambda number: True if number is None else number > 0
         return self
 
     def range(self, start, stop):
@@ -42,3 +46,15 @@ class ListData(DataType):
     def sizeof(self, size):
         self.conditions['sizeof'] = lambda list_of_data: len(list_of_data) == size
         return self
+
+
+class DictData(DataType):
+    def shape(self, scheme: dict):
+        self.conditions.update(scheme)
+        return self
+
+    def is_valid(self, map_of_data: dict):
+        for key, data_obj in self.conditions.items():
+            if not data_obj.is_valid(map_of_data[key]):
+                return False
+        return True

@@ -1,4 +1,4 @@
-from hexlet_code.datatypes import String, Number, ListData
+from hexlet_code.datatypes import String, Number, ListData, DictData
 
 
 class Validator:
@@ -13,3 +13,6 @@ class Validator:
 
     def list(self):
         return ListData()
+
+    def dict(self):
+        return DictData()
