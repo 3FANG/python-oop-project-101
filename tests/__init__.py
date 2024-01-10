@@ -10,6 +10,5 @@ from .test_numbers import (
     test_positive,
     test_range
 )
-from .test_list import (
-    test_sizeof_list
-)
+from .test_list import test_sizeof_list
+from .test_dict import test_shape
