@@ -1,7 +1,6 @@
 from .test_validate import(
     test_required,
-    test_instantiation,
-    test_custom_function
+    test_instantiation
 )
 from .test_string import (
     test_contains,

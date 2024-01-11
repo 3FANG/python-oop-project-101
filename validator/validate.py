@@ -1,4 +1,4 @@
-from hexlet_code.datatypes import String, Number, ListData, DictData, CheckFunction
+from validator.datatypes import String, Number, ListData, DictData, CheckFunction
 
 
 class Validator:
