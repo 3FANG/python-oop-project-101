@@ -1,1 +1,1 @@
-from .validate import Validator
+"""Module with validator and datatypes."""
