@@ -88,13 +88,12 @@ class ListData(DataType):
 
 class DictData(DataType):
     def __init__(self, validator):
-        super().__init__(validator)
+        self.validator = validator
         self.conditions: dict[str, DataType] = {}
         self.name = 'dict'
 
     def shape(self, schema: dict):
         self.conditions.update(schema)
-        print(self.conditions)
         return self
 
     def is_valid(self, map_of_data: dict):
