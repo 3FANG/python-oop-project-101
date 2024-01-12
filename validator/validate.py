@@ -2,8 +2,13 @@
 
 A validator is a kind of manager for data types.
 """
-from validator.datatypes import (CheckFunction, DictData, ListData, Number,
-                                 String)
+from validator.datatypes import (
+    CheckFunction,
+    DictData,
+    ListData,
+    Number,
+    String,
+)
 
 
 class Validator(object):
@@ -60,6 +65,6 @@ class Validator(object):
         Args:
             datatype: Specified data type (string, number, list, dict).
             name: Name of condition.
-            fn: Check-function.
+            fn: Function for checking condition.
         """
         self.custom_validators[datatype][name] = CheckFunction(check_function=fn, args=[])

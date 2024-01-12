@@ -137,7 +137,7 @@ class Number(DataType):
         """
         self.conditions['positive'] = CheckFunction(
             lambda number: True if number is None else number > 0,
-            )
+        )
         return self
 
     def range(self, start, stop):

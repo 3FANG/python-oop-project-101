@@ -1,8 +1,9 @@
+"""Test the ListData which is represent a list data type."""
 from validator.validate import Validator
 
 
 def test_sizeof_list():
-    """Check  the compliance with the specified length"""
+    """Check  the compliance with the specified length."""
     schema = Validator().list()
     schema.sizeof(2)
     assert schema.is_valid(['hexlet']) is False
